@@ -53,10 +53,12 @@ public class Main {
                             System.out.println("Введите количество шагов");
                             int goal = scanner.nextInt();
                             while (goal < 0) {
-                                System.out.println("Такого деня не существует");
-                                System.out.println("Введите количество шагов");
-                                stepTracker.goal = goal;}
-                                System.out.println("Знеачанеие сохранено, теперь :" + goal);
+                                System.out.println("Колличество шагов не может быть меньше 0");
+                                goal = scanner.nextInt();
+                                stepTracker.goal = goal;
+                            }
+
+                                System.out.println("Знеачанеие сохранено, теперь: " + goal);
 
                             } else if (userInput == 4) {
                                 System.out.println("Выход");
