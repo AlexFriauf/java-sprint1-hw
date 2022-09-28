@@ -32,25 +32,27 @@ public class StepTracker {
            return (double)sumSteps / monthToData[mount].dayToData.length;
         }
         public int getDistance(int mount){
+
         return converter.getDistance(getSumSteps(mount));
         }
 
         public double getCallories(int mount){
+
         return converter.getCallories(getSumSteps(mount));
         }
         public int getSeriasSteps(int mount) {
         int maxSerias = 0;
-        int currentSerias = 0;
+            int currentSerias = 0;
 
         for (int i = 0; i < monthToData[mount].dayToData.length; i++) {
                 if (monthToData[mount].dayToData[i].steps >= goal) {
-                 currentSerias++;
-
+                    currentSerias++;
                 } else {
                     if (maxSerias < currentSerias)
                         maxSerias = currentSerias;
-                }
                     currentSerias = 0;
+                }
+
 
                 }
         return maxSerias;
@@ -70,6 +72,7 @@ public class StepTracker {
       int steps;
 
         public DayData(){
+
             steps = 0;
         }
 

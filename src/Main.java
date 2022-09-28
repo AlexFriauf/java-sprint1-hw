@@ -28,7 +28,6 @@ public class Main {
                         System.out.println("Введите количество шагов");
                         int step = scanner.nextInt();
                         while (step < 0) {
-                            System.out.println("Такого деня не существует");
                             System.out.println("Введите количество шагов");
                             step = scanner.nextInt();
                         }
@@ -47,18 +46,18 @@ public class Main {
                            stepTracker.printStepsByDay(month);
                            System.out.println( "\n" +stepTracker.getSumSteps(month));
                            System.out.println(stepTracker.getAverageSteps(month));
-                           System.out.println(stepTracker.getDistance(month));
-                           System.out.println(stepTracker.getCallories(month));
-                           stepTracker.getSeriasSteps(month);
+                           System.out.println("Вы прошли за месяц:" + stepTracker.getDistance(month)+"км.");
+                           System.out.println("Было сожжено коллорий: "+stepTracker.getCallories(month));
+                           System.out.println("Лучшая серия: " + stepTracker.getSeriasSteps(month));
                         } else if (userInput == 3) {
                             System.out.println("Введите количество шагов");
                             int goal = scanner.nextInt();
                             while (goal < 0) {
                                 System.out.println("Такого деня не существует");
                                 System.out.println("Введите количество шагов");
-                                stepTracker.goal = goal;
+                                stepTracker.goal = goal;}
                                 System.out.println("Знеачанеие сохранено, теперь :" + goal);
-                            }
+
                             } else if (userInput == 4) {
                                 System.out.println("Выход");
                                 break;
