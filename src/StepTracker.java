@@ -52,17 +52,14 @@ public class StepTracker {
         for (int i = 0; i < monthToData[mount].dayToData.length; i++) {
             if (monthToData[mount].dayToData[i].steps >= goal) {
                 currentSerias = currentSerias + 1;
+                if (maxSerias < currentSerias) {
+                    maxSerias = currentSerias;
+                    }
             } else {
-                if (maxSerias < currentSerias){
-                    maxSerias = currentSerias;
+                    currentSerias = 0;
             }
-                else if (monthToData[mount].dayToData.length == i && maxSerias < currentSerias) {
-                    maxSerias = currentSerias;
                 }
 
-            currentSerias = 0;
-                }
-        }
         return maxSerias;
     }
 
